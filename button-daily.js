@@ -114,11 +114,15 @@ var dayOfWeekk = todayy.getDay();
       var button = carts[i]
       button.addEventListener('click', () => {
         addToCartClicked(carts[i])
-        console.log(button)
       })
   }
 
   var addToCartClicked = function(carts) {
+    var name = carts.getElementsByClassName('css-button-day-of-week')[0].innerText;
+    document.getElementById("all-today").className = `container today-active today-${name}`;
+    var name1 = carts.getAttributeNode("type").value;
+    var name2 = carts.getAttributeNode("name").value;
+    document.getElementById("content").innerText = `[${name1}-${name2}][daily][kamis]`;
     if (document. querySelector('.button-day-of-week.active') !== null) {
       document. querySelector('.button-day-of-week.active'). classList. remove('active');
     }
